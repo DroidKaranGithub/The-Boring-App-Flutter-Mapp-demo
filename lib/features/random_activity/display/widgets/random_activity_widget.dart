@@ -10,13 +10,14 @@ class RandomActivityWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     //Todo: Add the provider RandomActivityProvider
 
-    RandomActivity? randomActivity =  RandomActivity(
+    RandomActivity? randomActivity = RandomActivity(
         activity: 'Surf',
         type: 'Cool',
         participants: 1,
         price: 1,
         link: '',
-        accessibility: 1, key: '');
+        accessibility: 1,
+        key: '');
 
     // = Provider.of<RandomActivityProvider>(context).randomActivity;
 

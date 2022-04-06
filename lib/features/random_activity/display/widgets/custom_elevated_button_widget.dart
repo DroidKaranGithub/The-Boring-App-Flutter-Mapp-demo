@@ -36,7 +36,7 @@ class CustomElevatedButtonWidget extends StatelessWidget {
         label: Text(
           'Find A Random Activity',
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 20,
             color: textColor,
           ),
         ),
