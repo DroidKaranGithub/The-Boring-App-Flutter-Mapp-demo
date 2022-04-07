@@ -33,9 +33,6 @@ class SkeletonWidget extends StatelessWidget {
             onPressed: () async {
               Provider.of<SelectedPageProvider>(context, listen: false)
                   .changePage(0);
-
-              Provider.of<RandomActivityProvider>(context, listen: false)
-                  .eitherFailureOrActivity();
             },
             icon: const Icon(
               Icons.flash_on_outlined,
