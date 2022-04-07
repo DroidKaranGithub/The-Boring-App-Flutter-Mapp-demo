@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:the_boring_app_flutter_demo_1/features/random_activity/display/pages/legalese_page.dart';
 import 'package:the_boring_app_flutter_demo_1/features/random_activity/display/pages/random_activity_page.dart';
 
+import '../provider/random_activity_provider.dart';
 import 'custom_bottom_bar_widget.dart';
 
 //Todo: Add imports
@@ -29,15 +30,12 @@ class SkeletonWidget extends StatelessWidget {
         title: const Text('The Boring App'),
         actions: [
           IconButton(
-            onPressed: () async { 
+            onPressed: () async {
               Provider.of<SelectedPageProvider>(context, listen: false)
                   .changePage(0);
 
-              //Todo: Add the provider eitherFailureOrActivity.
-
-              // Provider.of<RandomActivityProvider>(context, listen: false)
-
-              //     .eitherFailureOrActivity();
+              Provider.of<RandomActivityProvider>(context, listen: false)
+                  .eitherFailureOrActivity();
             },
             icon: const Icon(
               Icons.flash_on_outlined,

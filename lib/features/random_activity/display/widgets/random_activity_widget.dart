@@ -1,31 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/errors/failures.dart';
 import '../../domain/entities/random_activity.dart';
+import '../provider/random_activity_provider.dart';
 
 class RandomActivityWidget extends StatelessWidget {
   const RandomActivityWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    //Todo: Add the provider RandomActivityProvider
+    RandomActivity? randomActivity =
+        Provider.of<RandomActivityProvider>(context).randomActivity;
 
-    RandomActivity? randomActivity = RandomActivity(
-        activity: 'Surf',
-        type: 'Cool',
-        participants: 1,
-        price: 1,
-        link: '',
-        accessibility: 1,
-        key: '');
-
-    // = Provider.of<RandomActivityProvider>(context).randomActivity;
-
-    //Todo: Add the provider RandomActivityProvider
-
-    Failure? failure = CacheFailure(errorMessage: 'Todo');
-
-    // = Provider.of<RandomActivityProvider>(context).failure;
+    Failure? failure = Provider.of<RandomActivityProvider>(context).failure;
 
     if (randomActivity != null) {
       return Expanded(
@@ -44,7 +32,7 @@ class RandomActivityWidget extends StatelessWidget {
               colorFilter: ColorFilter.mode(Colors.black26, BlendMode.darken),
               fit: BoxFit.cover,
               image: AssetImage(
-                'images/water_bg.jpg',
+                'images/water_bg.jpeg',
               ),
             ),
           ),
@@ -117,7 +105,7 @@ class RandomActivityWidget extends StatelessWidget {
       child: Center(
         child: CircularProgressIndicator(
           backgroundColor: Colors.white,
-          color: Colors.orangeAccent,
+          color: Colors.orange,
         ),
       ),
     );

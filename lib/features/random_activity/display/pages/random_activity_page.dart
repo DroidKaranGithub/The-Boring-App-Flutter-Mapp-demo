@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../provider/random_activity_provider.dart';
 import '../widgets/custom_elevated_button_widget.dart';
 import '../widgets/random_activity_widget.dart';
 
@@ -20,11 +22,8 @@ class RandomActivityPage extends StatelessWidget {
             textColor: Colors.white,
             iconColor: Colors.white,
             callback: () {
-              //Todo: Add the provider eitherFailureOrActivity.
-
-              // Provider.of<RandomActivityProvider>(context, listen: false)
-
-              //     .eitherFailureOrActivity();
+              Provider.of<RandomActivityProvider>(context, listen: false)
+                  .eitherFailureOrActivity();
             },
           ),
         ],
